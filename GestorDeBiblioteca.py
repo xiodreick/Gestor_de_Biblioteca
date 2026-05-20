@@ -8,8 +8,9 @@ while contador>0:
     b=b.lower()
     if  a==au and b==bc:
         print("acceso concedido")
-        contador=contador-1
+        break
     else:
-        print("usuario o contraseñas incorrectos")
+        contador=contador-1
+        print("usuario o contraseña incorrectos")
 
  
