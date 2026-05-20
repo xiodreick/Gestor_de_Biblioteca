@@ -1,14 +1,15 @@
-a=input("ingrese usuario: ")
-b=input("ingrese contraseña: ")
 au="usuario"
-ac="contraseña"
-a=a.lower()
-b=b.lower()
-contador=1
+bc="contraseña"
+contador=4
 while contador<=3:
-    if a!=au and b!=ac:
-        print("contraseña o usuario incorrectos")
-    contador=contador+1
-else:
-    print("bienvenido ", a)
+    a=input("ingrese usuario: ")
+    b=input("ingrese contraseña: ")
+    a=a.lower()
+    b=b.lower()
+    if  a==au and b==bc:
+        print("acceso concedido")
+        contador=contador+1
+    else:
+        print("usuario o contraseñas incorrectos")
+
  
