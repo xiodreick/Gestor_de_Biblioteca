@@ -26,7 +26,7 @@ if d==1:
                 print("-- acceso concedido --\n","1.- ver inventario\n","2.- Añadir o Quitar\n","3.- Salir")
                 e=int(input("ingrese opcion: "))
                 if e==1:
-                      inventario
+                      print(inventario)
                 break
             else:
                 print("usuario o contraseña incorrectos")
