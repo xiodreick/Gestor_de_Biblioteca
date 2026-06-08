@@ -1,4 +1,4 @@
-# Credenciales del único usuario administrador
+# unico usuario
 usuario_admin="infocal"
 contraseña_admin="contraseña1234"
 
