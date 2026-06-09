@@ -101,7 +101,7 @@ while True:
                             print("El numero del libro no existe.")
                     # con esto volvemos al menu principal para iniciar sesion o registrar un nuevo usuario
                     elif e==5:
-                        print("Cerrando sesión...")
+                        print("Cerrando sesion...")
                         # break para salir del menu del inventario y volver al menu principal
                         break
                 # break para salir del bucle de intentos una vez que el usuario ha cerrado sesion    
