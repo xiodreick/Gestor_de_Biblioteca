@@ -76,7 +76,7 @@ while True:
                             # .replace para eliminar extras inecesarios que puedan llegar a escribirse (los mas comunes)
                             precio_actualizado=nuevo_precio.replace("bs", "").replace(".", "").replace(" ", "").replace(",", "").replace("BS", "")
                             inventario[numero_libro]['precio']=int(precio_actualizado)
-                            inventario[numero_libro]['stock']=nuevo_stock
+                            inventario[numero_libro]['stock']=int(nuevo_stock)
                             print("\nLibro actualizado")
                         else:
                             print("\nEl numero del libro no existe.")
