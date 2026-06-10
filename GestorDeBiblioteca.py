@@ -71,10 +71,18 @@ while True:
                     elif e==2:
                         numero_libro=input("\nIngrese el numero del libro a modificar: ").strip()
                         if numero_libro in inventario:
-                            nuevo_stock=int(input(f"Nuevo stock para '{inventario[numero_libro]['nombre']}': "))
+                            entrada_stock = input(f"Nuevo stock para '{inventario[numero_libro]['nombre']}': ").strip()
+                            if not entrada_stock.isdigit():
+                                print("Error: El stock debe ser un numero entero.")
+                                continue
+                            nuevo_stock=int(entrada_stock) 
                             nuevo_precio=input(f"Nuevo precio para '{inventario[numero_libro]['nombre']}' (en Bs.): ").lower()
                             # .replace para eliminar extras inecesarios que puedan llegar a escribirse (los mas comunes)
                             precio_actualizado=nuevo_precio.replace("bs", "").replace(".", "").replace(" ", "").replace(",", "").replace("BS", "")
+                            if not precio_actualizado.isdigit():
+                                print("Error: El precio debe contener un numero valido.")
+                                continue
+                                
                             inventario[numero_libro]['precio']=int(precio_actualizado)
                             inventario[numero_libro]['stock']=int(nuevo_stock)
                             print("\nLibro actualizado")
@@ -85,9 +93,19 @@ while True:
                     elif e==3:
                         nuevo_libro=str(len(inventario) + 1)
                         nombre=input("\nNombre del nuevo libro: ").strip()
-                        stock=int(input("Cantidad o stock inicial: "))
+                        
+                        entrada_stock_inicial = input("Cantidad o stock inicial: ").strip()
+                        if not entrada_stock_inicial.isdigit():
+                            print("Error: El stock debe ser un numero entero.")
+                            continue
+                        stock=int(entrada_stock_inicial)
+                        
                         nuevo_precio=input("Precio del libro (sin decimales): ").lower()
                         precio_actualizado=nuevo_precio.replace("bs", "").replace(".", "").replace(" ", "").replace(",", "").replace("BS", "")
+                        if not precio_actualizado.isdigit():
+                            print("Error: El precio debe contener un numero valido.")
+                            continue
+                            
                         inventario[nuevo_libro]={"nombre": nombre, "stock": stock, "precio": int(precio_actualizado)}
                         print(f"'{nombre}' añadido con éxito bajo el numero {nuevo_libro}")
                     # elimina un libro existente del inventario actual
